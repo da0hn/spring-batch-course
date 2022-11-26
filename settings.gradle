@@ -1,2 +1,4 @@
 rootProject.name = 'spring-batch-course'
 include 'first-project'
+include 'metadata-persistence'
+
