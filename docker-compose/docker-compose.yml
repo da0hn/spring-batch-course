@@ -1,4 +1,5 @@
 version: '3.8'
+name: spring-batch-course
 services:
   spring-batch-database:
     container_name: spring-batch-database
