@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: first-project
+server:
+  address: 0.0.0.0
+  port: 8080
+
