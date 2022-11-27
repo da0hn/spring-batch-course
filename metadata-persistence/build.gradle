@@ -13,8 +13,14 @@ repositories {
 }
 
 dependencies {
-  implementation 'mysql:mysql-connector-java:8.0.30'
+
+  implementation libs.lombok
+  compileOnly libs.lombok
+  annotationProcessor libs.lombok
+
+  implementation(libs.mysql.connector)
   implementation 'org.springframework.boot:spring-boot-starter-batch'
+
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
   testImplementation 'org.springframework.batch:spring-batch-test'
 }
