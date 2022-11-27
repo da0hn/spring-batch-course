@@ -43,7 +43,7 @@ public class EvenOrOddBatchConfiguration {
   public Step printEvenOrOddStep() {
     return this.stepBuilderFactory
       .get("printEvenOrOddStep")
-      .<Integer, String>chunk(1)
+      .<Integer, String>chunk(10)
       .reader(this.countUntilTen())
       .processor(this.oddOrEvenProcessor())
       .writer(this.printWriter())
