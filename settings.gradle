@@ -1,6 +1,4 @@
 rootProject.name = 'spring-batch-course'
-include 'first-project'
-include 'metadata-persistence'
 
 dependencyResolutionManagement {
 
@@ -17,3 +15,8 @@ dependencyResolutionManagement {
     }
   }
 }
+
+include 'flat-file-reader'
+include 'first-project'
+include 'metadata-persistence'
+
