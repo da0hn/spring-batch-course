@@ -16,13 +16,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableBatchProcessing
-public class BatchConfiguration {
+public class ParameterizedHelloBatchConfiguration {
 
   private final JobBuilderFactory jobBuilderFactory;
   private final StepBuilderFactory stepBuilderFactory;
 
   @Autowired
-  public BatchConfiguration(
+  public ParameterizedHelloBatchConfiguration(
     final JobBuilderFactory jobBuilderFactory,
     final StepBuilderFactory stepBuilderFactory
   ) {
