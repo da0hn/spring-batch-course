@@ -1,4 +1,4 @@
-package com.gabriel.batch.metadata.persistence;
+package com.gabriel.batch.metadata.persistence.jobs;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
