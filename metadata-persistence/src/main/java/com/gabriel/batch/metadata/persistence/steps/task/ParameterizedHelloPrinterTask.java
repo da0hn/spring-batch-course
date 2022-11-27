@@ -1,5 +1,6 @@
 package com.gabriel.batch.metadata.persistence.steps.task;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.scope.context.ChunkContext;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @StepScope
+@Log4j2
 @Component
 public class ParameterizedHelloPrinterTask implements Tasklet {
 
@@ -24,7 +26,7 @@ public class ParameterizedHelloPrinterTask implements Tasklet {
     final StepContribution contribution,
     final ChunkContext chunkContext
   ) throws Exception {
-    System.out.printf("Hello, %s%n", this.name);
+    log.info("Hello, {}", this.name);
     return RepeatStatus.FINISHED;
   }
 

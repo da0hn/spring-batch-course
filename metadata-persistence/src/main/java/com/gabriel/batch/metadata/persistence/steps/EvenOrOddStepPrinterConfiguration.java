@@ -1,5 +1,6 @@
 package com.gabriel.batch.metadata.persistence.steps;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+@Slf4j
 @Configuration
 public class EvenOrOddStepPrinterConfiguration {
 
@@ -46,7 +48,7 @@ public class EvenOrOddStepPrinterConfiguration {
   }
 
   private ItemWriter<? super String> printWriter() {
-    return items -> items.forEach(System.out::println);
+    return items -> items.forEach(log::info);
   }
 
 }
