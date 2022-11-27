@@ -1,9 +1,9 @@
 spring:
   application:
-    name: metadata-persistence
+    name: flat-file-reader
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:13306}/${DATABASE:spring_batch}?autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:13306}/${DATABASE:spring_batch}?autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2&useUnicode=true&characterEncoding=UTF-8
     username: ${DATABASE_USERNAME:root}
     password: ${DATABASE_PASSWORD:root}
   batch:
