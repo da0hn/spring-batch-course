@@ -1,6 +1,6 @@
-package com.gabriel.batch.delimited.files.reader.jobs.steps.readers;
+package com.gabriel.batch.delimited.file.reader.jobs.steps.readers;
 
-import com.gabriel.batch.delimited.files.reader.Client;
+import com.gabriel.batch.delimited.file.reader.Client;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;

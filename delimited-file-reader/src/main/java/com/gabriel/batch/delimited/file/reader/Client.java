@@ -1,4 +1,4 @@
-package com.gabriel.batch.delimited.files.reader;
+package com.gabriel.batch.delimited.file.reader;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

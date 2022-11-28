@@ -1,7 +1,7 @@
-package com.gabriel.batch.delimited.files.reader.jobs.steps;
+package com.gabriel.batch.delimited.file.reader.jobs.steps;
 
-import com.gabriel.batch.delimited.files.reader.Client;
-import com.gabriel.batch.delimited.files.reader.jobs.steps.writers.SimpleLoggerWriter;
+import com.gabriel.batch.delimited.file.reader.Client;
+import com.gabriel.batch.delimited.file.reader.jobs.steps.writers.SimpleLoggerWriter;
 import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;

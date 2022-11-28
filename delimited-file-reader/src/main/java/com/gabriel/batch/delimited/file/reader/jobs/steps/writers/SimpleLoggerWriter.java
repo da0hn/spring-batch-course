@@ -1,6 +1,6 @@
-package com.gabriel.batch.delimited.files.reader.jobs.steps.writers;
+package com.gabriel.batch.delimited.file.reader.jobs.steps.writers;
 
-import com.gabriel.batch.delimited.files.reader.Client;
+import com.gabriel.batch.delimited.file.reader.Client;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Component;

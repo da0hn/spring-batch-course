@@ -1,4 +1,4 @@
-package com.gabriel.batch.delimited.files.reader.jobs;
+package com.gabriel.batch.delimited.file.reader.jobs;
 
 import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Job;
