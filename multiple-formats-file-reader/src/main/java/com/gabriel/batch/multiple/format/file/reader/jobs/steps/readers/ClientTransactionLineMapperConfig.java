@@ -1,7 +1,7 @@
 package com.gabriel.batch.multiple.format.file.reader.jobs.steps.readers;
 
 import com.gabriel.batch.multiple.format.file.reader.Client;
-import com.gabriel.batch.multiple.format.file.reader.RawFileData;
+import com.gabriel.batch.multiple.format.file.reader.ReadableFileData;
 import com.gabriel.batch.multiple.format.file.reader.Transaction;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
@@ -18,8 +18,8 @@ import java.util.Map;
 public class ClientTransactionLineMapperConfig {
 
   @Bean
-  public PatternMatchingCompositeLineMapper<RawFileData> lineMapper() {
-    final var lineMapper = new PatternMatchingCompositeLineMapper<RawFileData>();
+  public PatternMatchingCompositeLineMapper<ReadableFileData> lineMapper() {
+    final var lineMapper = new PatternMatchingCompositeLineMapper<ReadableFileData>();
     lineMapper.setTokenizers(this.tokenizers());
     lineMapper.setFieldSetMappers(this.fieldSetMappers());
     return lineMapper;
@@ -32,8 +32,8 @@ public class ClientTransactionLineMapperConfig {
     return tokenizers;
   }
 
-  private Map<String, FieldSetMapper<RawFileData>> fieldSetMappers() {
-    final var fieldSetMappers = new HashMap<String, FieldSetMapper<RawFileData>>();
+  private Map<String, FieldSetMapper<ReadableFileData>> fieldSetMappers() {
+    final var fieldSetMappers = new HashMap<String, FieldSetMapper<ReadableFileData>>();
     fieldSetMappers.put("0*", this.fieldSetMapper(Client.class));
     fieldSetMappers.put("1*", this.fieldSetMapper(Transaction.class));
     return fieldSetMappers;
@@ -53,8 +53,8 @@ public class ClientTransactionLineMapperConfig {
     return delimitedLineTokenizer;
   }
 
-  private FieldSetMapper<RawFileData> fieldSetMapper(final Class<? extends RawFileData> clazz) {
-    final var beanWrapperFieldSetMapper = new BeanWrapperFieldSetMapper<RawFileData>();
+  private FieldSetMapper<ReadableFileData> fieldSetMapper(final Class<? extends ReadableFileData> clazz) {
+    final var beanWrapperFieldSetMapper = new BeanWrapperFieldSetMapper<ReadableFileData>();
     beanWrapperFieldSetMapper.setTargetType(clazz);
     return beanWrapperFieldSetMapper;
   }

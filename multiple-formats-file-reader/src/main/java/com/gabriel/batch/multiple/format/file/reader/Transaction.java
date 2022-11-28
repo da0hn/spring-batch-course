@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Transaction implements RawFileData {
+public final class Transaction implements ReadableFileData {
 
   private String id;
   private String name;
