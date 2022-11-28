@@ -1,5 +1,6 @@
 package com.gabriel.batch.multiple.format.file.reader.jobs.steps.readers;
 
+import com.gabriel.batch.multiple.format.file.reader.RawFileData;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.LineMapper;
@@ -15,9 +16,9 @@ public class MultipleFormatsFileClientReaderConfiguration {
 
   @Bean
   @StepScope
-  public FlatFileItemReader<Object> multipleFormatsFileClientReader(
+  public FlatFileItemReader<RawFileData> multipleFormatsFileClientReader(
     @Value("#{jobParameters['data']}") final Resource dataResource,
-    final LineMapper<?> lineMapper
+    final LineMapper<RawFileData> lineMapper
   ) {
     return new FlatFileItemReaderBuilder()
       .name("multipleFormatsFileClientReader")

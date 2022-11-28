@@ -11,7 +11,7 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public final class Client {
+public final class Client implements RawFileData {
 
   private String name;
   private String surname;

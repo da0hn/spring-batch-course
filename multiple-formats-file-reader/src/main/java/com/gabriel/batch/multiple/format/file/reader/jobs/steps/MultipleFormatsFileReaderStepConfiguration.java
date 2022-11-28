@@ -1,5 +1,6 @@
 package com.gabriel.batch.multiple.format.file.reader.jobs.steps;
 
+import com.gabriel.batch.multiple.format.file.reader.RawFileData;
 import com.gabriel.batch.multiple.format.file.reader.jobs.steps.writers.SimpleLoggerWriter;
 import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Step;
@@ -17,12 +18,12 @@ public class MultipleFormatsFileReaderStepConfiguration {
 
   @Bean
   public Step multipleFormatsFileReaderStep(
-    final FlatFileItemReader multipleFormatsFileClientReader,
+    final FlatFileItemReader<? extends RawFileData> multipleFormatsFileClientReader,
     final SimpleLoggerWriter simpleLoggerWriter
   ) {
     return this.stepBuilderFactory
       .get("multipleFormatsFileReaderStep")
-      .chunk(1)
+      .<RawFileData, RawFileData>chunk(1)
       .reader(multipleFormatsFileClientReader)
       .writer(simpleLoggerWriter)
       .build();

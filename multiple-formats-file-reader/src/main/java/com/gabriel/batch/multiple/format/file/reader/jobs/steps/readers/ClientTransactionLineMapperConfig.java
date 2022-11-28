@@ -1,6 +1,7 @@
 package com.gabriel.batch.multiple.format.file.reader.jobs.steps.readers;
 
 import com.gabriel.batch.multiple.format.file.reader.Client;
+import com.gabriel.batch.multiple.format.file.reader.RawFileData;
 import com.gabriel.batch.multiple.format.file.reader.Transaction;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
@@ -17,8 +18,8 @@ import java.util.Map;
 public class ClientTransactionLineMapperConfig {
 
   @Bean
-  public PatternMatchingCompositeLineMapper lineMapper() {
-    final var lineMapper = new PatternMatchingCompositeLineMapper();
+  public PatternMatchingCompositeLineMapper<RawFileData> lineMapper() {
+    final var lineMapper = new PatternMatchingCompositeLineMapper<RawFileData>();
     lineMapper.setTokenizers(this.tokenizers());
     lineMapper.setFieldSetMappers(this.fieldSetMappers());
     return lineMapper;
@@ -31,8 +32,8 @@ public class ClientTransactionLineMapperConfig {
     return tokenizers;
   }
 
-  private Map<String, Object> fieldSetMappers() {
-    final var fieldSetMappers = new HashMap<String, Object>();
+  private Map<String, FieldSetMapper<RawFileData>> fieldSetMappers() {
+    final var fieldSetMappers = new HashMap<String, FieldSetMapper<RawFileData>>();
     fieldSetMappers.put("0*", this.fieldSetMapper(Client.class));
     fieldSetMappers.put("1*", this.fieldSetMapper(Transaction.class));
     return fieldSetMappers;
@@ -52,8 +53,8 @@ public class ClientTransactionLineMapperConfig {
     return delimitedLineTokenizer;
   }
 
-  private <T> FieldSetMapper<T> fieldSetMapper(final Class<T> clazz) {
-    final var beanWrapperFieldSetMapper = new BeanWrapperFieldSetMapper<T>();
+  private FieldSetMapper<RawFileData> fieldSetMapper(final Class<? extends RawFileData> clazz) {
+    final var beanWrapperFieldSetMapper = new BeanWrapperFieldSetMapper<RawFileData>();
     beanWrapperFieldSetMapper.setTargetType(clazz);
     return beanWrapperFieldSetMapper;
   }
