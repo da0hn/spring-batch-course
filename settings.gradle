@@ -21,4 +21,5 @@ include 'first-project'
 include 'metadata-persistence'
 include 'delimited-file-reader'
 include 'multiple-formats-file-reader'
+include 'multiple-files-reader'
 
