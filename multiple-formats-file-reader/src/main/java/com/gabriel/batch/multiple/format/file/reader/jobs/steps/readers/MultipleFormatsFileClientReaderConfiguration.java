@@ -20,7 +20,7 @@ public class MultipleFormatsFileClientReaderConfiguration {
     @Value("#{jobParameters['data']}") final Resource dataResource,
     final LineMapper<ReadableFileData> lineMapper
   ) {
-    return new FlatFileItemReaderBuilder()
+    return new FlatFileItemReaderBuilder<ReadableFileData>()
       .name("multipleFormatsFileClientReader")
       .resource(dataResource)
       .lineMapper(lineMapper)

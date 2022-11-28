@@ -22,4 +22,5 @@ include 'metadata-persistence'
 include 'delimited-file-reader'
 include 'multiple-formats-file-reader'
 include 'multiple-files-reader'
+include 'reader:jdbc-cursor-reader'
 
