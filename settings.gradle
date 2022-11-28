@@ -16,12 +16,12 @@ dependencyResolutionManagement {
   }
 }
 
-include 'flat-file-reader'
 include 'first-project'
 include 'metadata-persistence'
-include 'delimited-file-reader'
-include 'multiple-formats-file-reader'
-include 'multiple-files-reader'
-include 'reader:jdbc-cursor-reader'
-include 'reader:jdbc-paginated-reader'
+include 'reader:flat-file-reader'
+include 'reader:delimited-file-reader'
+include 'reader:multiple-files-reader'
+include 'reader:multiple-formats-file-reader'
+include 'reader:jdbc:jdbc-cursor-reader'
+include 'reader:jdbc:jdbc-paginated-reader'
 
