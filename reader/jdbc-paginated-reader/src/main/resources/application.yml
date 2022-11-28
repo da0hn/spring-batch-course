@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: jdbc-cursor-reader
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:13306}/${DATABASE:spring_batch}?autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2&useUnicode=true&characterEncoding=UTF-8
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: true
+server:
+  address: 0.0.0.0
+  port: 8080
+app:
+  datasource:
+    jdbcUrl: jdbc:mysql://${APP_DATABASE_HOST:localhost}:${APP_DATABASE_PORT:13306}/${APP_DATABASE:application}?autoReconnect=true&useSSL=false&useTimezone=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2&useUnicode=true&characterEncoding=UTF-8
+    username: ${APP_DATABASE_USERNAME:root}
+    password: ${APP_DATABASE_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
