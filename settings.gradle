@@ -20,4 +20,5 @@ include 'flat-file-reader'
 include 'first-project'
 include 'metadata-persistence'
 include 'delimited-file-reader'
+include 'multiple-formats-file-reader'
 
